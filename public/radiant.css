@@ -1,0 +1,84 @@
+body { line-height:1.4; font-family:Arial,sans-serif; color:#000; background:#FFF; font-size:12px; }
+
+#header { background:#860404 url('header_gradient_red.jpg') no-repeat left; font-size:60%; }
+    #header h1 { color:#FFF; letter-spacing:-0.5px; font-weight:bold; margin:0px; margin-left:20px; padding:0px;
+         line-height:38px; }
+    #header span { color:#FFCC66; font-size:70%; font-weight:normal; letter-spacing:0px; }
+    #header p { color:#F2F2F2; font-size:11px; line-height:38px; padding:0px; margin:0px; text-align:right;
+        margin-right:20px; }
+#menu { background:#860404 url('header_gradient_red.jpg') no-repeat left; line-height:26px; font-size:13px; }
+    #menu ul { list-style:none; margin-top:4px; color:#000; }
+    #menu li { float:left; padding:0px 25px; background:#EAE3C5; margin-right:5px; }
+        #menu li.current { background:#FFF; color:#000; font-weight:bold; }
+    #menu a { text-decoration:none; color:inherit; }
+    #menu a:hover { text-decoration:underline; }
+
+#main { width:950px; margin:0 auto; margin-bottom:10px; background:#FFF; margin-top:10px; }
+#main div.container { border:0px solid #999999; }
+    #main #search { margin-bottom:0px; margin-top:15px; }
+    #main #search input.text { font-size:20px; color:#BBBBBB; padding:1px 0px 1px 5px; margin:0px;
+        vertical-align:bottom; background:url('tex_bg.gif') repeat-x; border-top:1px solid #727272;
+        border-right:1px solid #B4B4B4; border-bottom: 1px solid #DADADA; border-left:1px solid #B4B4B4; }
+        #main #search input.button { vertical-align:bottom; height:28px; color:transparent; width:30px; border:none;
+            background:url('search_button_green.png') no-repeat center; }
+    #main #search input.focused { color:#000; }
+    #main input.button { font-size:15px; padding:4px 5px; color:#000; border:1px solid #BBB; cursor:pointer;
+             background:#FFF url('buttonbg.gif') repeat-x bottom; margin-top:-1px; }
+
+    #main #text h2 { color:#000; font-size:17px; margin:15px 0px 7px 0px; padding:3px 0px 3px 6px;
+        font-weight:bold; margin-top:15px; background:#F5F5F5; }
+        #main #text h2 input { float:right; font-size:12px; font-weight:bold; padding:3px 5px; }
+        #main #text h2 a { float:right; font-size:12px; padding:2px; margin-right:10px; text-decoration:none;
+            line-height:19px; }
+    #main #text div.browse { padding:0px; margin:0px; }
+    #main #text a { color:#A30504; font-size:13px; }
+    #main #text a:hover { color:#171717; }
+
+    #main #text h3 { color:#3C78B5; font-size:13px; padding:0px; margin:0px; margin-bottom:4px; }
+        #main #text h3 a { color:#000; }
+        #main #text h3 a.star { width:10px; display:block; float:right; text-decoration:none; }
+            #main #text h3 a.star.empty { background:url('star_off.png') no-repeat center; }
+            #main #text h3 a.star.full { background:url('star.png') no-repeat center; }
+            #main #text #details h3 a.star { float:left; }
+    #main #text #view p { margin:0px; padding:0px; margin-left:6px; }
+    #main #text #view h1 { font-size:15px; }
+    #main #text #view h2 { font-size:13px; }
+    #main #text #view h3 { color:#7995AA; margin-left:10px; }
+
+    #main #text p.preview { padding:0px; margin:0px; line-height:13px; }
+    #main #text div.full { color:#CC0607; letter-spacing:0.5px; font-size:14px; display:inline; }
+    #main #text div.empty { color:#999999; letter-spacing:0.5px; font-size:14px; display:inline; }
+    #main #text div.description { float:right; font-size:11px; }
+        #main #text div.description a { font-size:11px; }
+        #main #text div.description span.small { font-size:10px; }
+    #main #text div.row { margin-top:6px; border-bottom:1px solid #EAEAEA; }
+        #main #text div.end { border-bottom:none; }
+    #main #text div.pagination { text-align:center; margin-top:15px; line-height:20px; }
+         #main #text div.pagination a { color:#A30504; font-size:12px; padding:2px 5px; text-decoration:none; }
+         #main #text div.pagination a.current { font-weight:bold; text-decoration:underline; }
+
+    #main #text #details input { width:98.5%; padding-left:4px; font-family:monospace; font-size:12px; margin-top:0px;
+        background:url('tex_bg.gif') repeat-x; border-top:1px solid #727272; border-right:1px solid #B4B4B4;
+        border-bottom: 1px solid #DADADA; border-left:1px solid #B4B4B4; }
+    #main #text #details select { width:100%; font-size:12px; margin-top:0px;
+        border-top:1px solid #727272; border-right:1px solid #B4B4B4; border-bottom: 1px solid #DADADA;
+        border-left:1px solid #B4B4B4; }
+    #main #text #details textarea { height:50px; width:97.5%; margin-top:0px; background:url('tex_bg.gif') repeat-x;
+        border-top:1px solid #727272; border-right:1px solid #B4B4B4; border-bottom: 1px solid #DADADA;
+        border-left:1px solid #B4B4B4; }
+    #main #text #details a { text-decoration:none; font-size:11px; }
+    #main #text #details div.right { float:right; font-size:11px; color:#9E9E9E; }
+    #main #text #textarea { height:338px; background:url('tex_bg.gif') repeat-x; border-top:1px solid #727272;
+        border-right:1px solid #B4B4B4; border-bottom: 1px solid #DADADA; border-left:1px solid #B4B4B4; }
+
+    h2.message { padding-bottom:0px; margin-bottom:0px; background:#FFF; font-size:13px;
+              padding:3px; text-align:center; font-weight:bold; border:none; }
+        h2.fail { color:#CC0000; background:#FFEBE8; border:1px solid #CC0000; border-left:0px; border-right:0px; }
+        h2.success { color:#4FCC00; background:#F1FFE8; border:1px solid #4FCC00; border-left:0px; border-right:0px; }
+
+    #main #text span.highlight { background:#FFCC66; border-bottom:1px solid #A30504; padding:0px 0px; }
+
+    #main #score a { text-decoration:none; cursor:help; }
+
+    #footer { text-align:center; color:#BAB49D; font-size:10px; }
+        #footer a { color:#BAB49D; font-weight:bold; text-decoration:none; }

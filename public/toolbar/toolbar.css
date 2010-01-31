@@ -1,0 +1,17 @@
+ul#toolbar{margin-bottom:1px;}
+ul#toolbar a{text-decoration:none;line-height:15px;display:inline;background-image:url(toolbar.gif);cursor:pointer;}
+ul#toolbar li{display:inline;margin:0px;padding:1px;}
+ul#toolbar li a{border:1px solid #FFF;padding:1px;}
+ul#toolbar li a:hover{background-color:#9CCBF2; border:1px solid #0A246A;}
+
+ul#toolbar li.bold a{background-position:1px -2px;}
+ul#toolbar li.italics a{background-position:-59px -2px;}
+ul#toolbar li.underline a{background-position:-139px -2px;}
+ul#toolbar li.list a{background-position:-19px -2px;}
+ul#toolbar li.para a{background-position:-41px -2px;}
+ul#toolbar li.h1 a{background-position:-659px -2px;}
+ul#toolbar li.h2 a{background-position:-679px -2px;}
+ul#toolbar li.h3 a{background-position:-699px -2px;}
+ul#toolbar li.quote a{background-position:-219px -2px;}
+ul#toolbar li.img a{background-position:-379px -2px;}
+ul#toolbar li.link a{background-position:-499px -2px;}
