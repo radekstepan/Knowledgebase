@@ -16,7 +16,7 @@
 // app directory; this directory contains your models, views & controllers
 if (!defined('APP_DIR')) define('APP_DIR', 'application');
 // application version
-if (!defined('APP_VERSION')) define('APP_VERSION', 'Knowledgebase 0.6.0');
+if (!defined('APP_VERSION')) define('APP_VERSION', 'Knowledgebase 0.6.2');
 // default Controller for the application (pages in a CMS)
 if (!defined('DEFAULT_CONTROLLER')) define('DEFAULT_CONTROLLER', 'search');
 // set to FALSE on live version of your application

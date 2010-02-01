@@ -45,7 +45,7 @@ body { line-height:1.4; font-family:Arial,sans-serif; color:#696969; background:
     #main #text #view p { margin:0px; padding:0px; }
     #main #text #view h1 { font-size:15px; }
     #main #text #view h2 { font-size:13px; }
-    #main #text #view h3 { color:#7995AA; margin-left:10px; }
+    #main #text #view h3 { color:#7995AA; }
 
     #main #text p.preview { padding:0px; margin:0px; line-height:13px; }
     #main #text div.full { color:#ff0000; letter-spacing:0.5px; font-size:14px; display:inline; }
@@ -72,6 +72,8 @@ body { line-height:1.4; font-family:Arial,sans-serif; color:#696969; background:
     #main #text #details div.right { float:right; font-size:11px; color:#9E9E9E; }
     #main #text #textarea { height:338px; background:url('tex_bg.gif') repeat-x; border-top:1px solid #727272;
         border-right:1px solid #B4B4B4; border-bottom: 1px solid #DADADA; border-left:1px solid #B4B4B4; }
+        #main #text #textarea.expanded { width:859px; }
+        #main a#expand { text-align:center; text-decoration:none; font-size:11px; }
 
     h2.message { padding-bottom:0px; margin-bottom:0px; background:#FFF; font-size:13px;
               padding:3px; text-align:center; font-weight:bold; border:none; }

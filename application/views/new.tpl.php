@@ -59,6 +59,21 @@
                 document.getElementById('type-input').value = document.getElementById('type-select').value;
             }
         }
+
+        function expand() {
+            var e = document.getElementById('expand');
+            var textarea = document.getElementById('textarea');
+            var details = document.getElementById('details');
+            if (e.innerHTML == '(expand textarea)') {
+                details.style.display = 'none';
+                textarea.className = 'expanded';
+                e.innerHTML = '(show details)';
+            } else {
+                details.style.display = 'block';
+                textarea.className = '';
+                e.innerHTML = '(expand textarea)';
+            }
+        }
     </script>
     <script type="text/javascript" src="<?php $this->url('/public/toolbar/toolbar.js'); ?>"></script>
 </head>
@@ -164,6 +179,9 @@
                         </div>
                     </div>
                     </form>
+                </div>
+                <div class="span-22 last">
+                    <center><a id="expand" href="" onClick="expand();return false;">(expand textarea)</a></center>
                 </div>
             </div>
         </div>
