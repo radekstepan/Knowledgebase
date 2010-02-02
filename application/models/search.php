@@ -10,6 +10,8 @@ class Search {
     private static $type = 1;
     private static $text = 0.7;
     private static $comments = 0.25;
+    // multiplier applied to tuple matches
+    private static $tuple = 1.5;
 
     // fibonacci sequence to weigh down consecutive words used in a search
     private static $fib = array(1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584);
@@ -35,10 +37,37 @@ class Search {
     public static function relevance(array $query, array $result) {
         $scores = array(); // an array having id's as keys and relevance scores as values
         $new = array();
+        $length = count($query); // length of the query
 
-        foreach ($result as $row) { // foreach found text...
-            $relevance = 0; $seq = 0;
-            foreach ($query as $word) { // foreach query word...
+        // foreach found text...
+        foreach ($result as $row) {
+            // init the relevance
+            $relevance = 0;
+            // traverse the array so we can create tuples of 2 elements
+            $seq = 0; for ($z = 0; $z <= ($length - 2); $z++) {
+                // create the string we want to match for
+                $string = $query[$z] . ' ' . $query[$z + 1];
+                // find the matches for this string
+                $count = substr_count($row['titleStems'], $string);
+                for ($i = 0; $i < $count; $i++) $relevance += (self::$title / self::$fib[$seq]) / self::$fib[$i];
+                $count = substr_count(strtolower($row['type']), $string);
+                for ($i = 0; $i < $count; $i++) $relevance += (self::$type / self::$fib[$seq]) / self::$fib[$i];
+                $count = substr_count(strtolower($row['source']), $string);
+                for ($i = 0; $i < $count; $i++) $relevance += (self::$source / self::$fib[$seq]) / self::$fib[$i];
+                $count = substr_count(strtolower($row['category']), $string);
+                for ($i = 0; $i < $count; $i++) $relevance += (self::$category / self::$fib[$seq]) / self::$fib[$i];
+                $count = substr_count(strtolower($row['tags']), $string);
+                for ($i = 0; $i < $count; $i++) $relevance += (self::$tags / self::$fib[$seq]) / self::$fib[$i];
+                $count = substr_count($row['stems'], $string);
+                for ($i = 0; $i < $count; $i++) $relevance += (self::$text / self::$fib[$seq]) / self::$fib[$i];
+                $count = substr_count(strtolower($row['comments']), $string);
+                for ($i = 0; $i < $count; $i++) $relevance += (self::$comments / self::$fib[$seq]) / self::$fib[$i];
+            }
+            // multiply the relevance gained in tuple phase
+            $relevance = $relevance * 2;
+
+            // find single keyword matches
+            $seq = 1; foreach ($query as $word) { // foreach query word...
                 $count = substr_count($row['titleStems'], $word);
                 for ($i = 0; $i < $count; $i++) $relevance += (self::$title / self::$fib[$seq]) / self::$fib[$i];
                 $count = substr_count(strtolower($row['type']), $word);
@@ -55,6 +84,7 @@ class Search {
                 for ($i = 0; $i < $count; $i++) $relevance += (self::$comments / self::$fib[$seq]) / self::$fib[$i];
                 $seq++;
             }
+
             $scores[$row['id']] = $relevance; // add to scores array
 
             // add to result array based on id key
@@ -77,7 +107,7 @@ class Search {
     private static function score($relevance) {
         // relevance score (5 categories)
         $divider = (self::$title + self::$type + self::$source + self::$category + self::$tags + self::$text +
-            + self::$comments) / 7;
+            + self::$comments) / 2;
         switch ($relevance) {
             case (0): return 0;
             case ($relevance < $divider): return 1;
