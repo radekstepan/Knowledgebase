@@ -95,7 +95,7 @@
                         </div>
                         <div id="score" class="span-2">
                             <a title="<?php echo $row['score']; ?>">
-                                <div class="full"><?php for ($i = 0; $i < $row['relevance']; $i++) echo '&bull'; ?></div><div class="empty"><?php for ($i = 0; $i < 5 - $row['relevance']; $i++) echo '&bull'; ?></div>
+                                <div class="full"><?php for ($i = 0; $i < $row['relevance']; $i++) echo '&bull;'; ?></div><div class="empty"><?php for ($i = 0; $i < 5 - $row['relevance']; $i++) echo '&bull;'; ?></div>
                             </a>
                         </div>
                     </div>
